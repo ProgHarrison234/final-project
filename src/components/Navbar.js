@@ -2,63 +2,27 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const Navbar = () => {
-    
+
     return (
         <div>
-            <nav className="navbar" role="navigation" aria-label="main navigation">
-                <div classNameName="navbar-brand">
-                    <a className="navbar-item" href="#">
-                        <img src={require("../Images/open-book.jpg")} width='25%' height="25%" />
-                    </a>
-
-                    <a role="button" className="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
-                        <span aria-hidden="true"></span>
-                        <span aria-hidden="true"></span>
-                        <span aria-hidden="true"></span>
-                    </a>
-                </div>
-                <div id="navbarBasicExample" className="navbar-menu">
-                    <div className="navbar-start">
-                        <a className="navbar-item">
-                            Home
-                        </a>
-
-                        <a className="navbar-item">
-                            Documentation
-                        </a>
+            <nav className="navbar is-info" role="navigation" aria-label="main navigation">
+                <div className="container">
+                    <div className="open-book">
+                        <img src={require("../Images/open-book.png")} width='80%' height="100%" />
                     </div>
-                    <div className="navbar-item has-dropdown is-hoverable">
-                        <a className="navbar-link">
-                            More
-                        </a>
-                    </div>
-                    <div className="navbar-dropdown">
-                        <a className="navbar-item">
-                            About
-                        </a>
-                        <a className="navbar-item">
-                            Jobs
-                        </a>
-                        <a className="navbar-item">
-                            Contact
-                        </a>
-                        <hr className="navbar-divider"/>
-                            <a className="navbar-item">
-                                Report an issue
-                            </a>
-                    </div>
-
-                    <div className="navbar-end">
-                        <div className="navbar-item">
-                            <div className="buttons">
-                                <a className="button is-primary">
-                                    <strong >Sign up</strong>
-                                </a>
-                                <a className="button is-light">
-                                    Log in
-                                </a>
+                    <div id="navbar-main">
+                        <div id="logo-name">The Study Wall</div>
+                        <div className = "columns">
+                            <div className="column pages">
+                                  Sign In
+                            </div>
+                            <div className="column pages">
+                                    Find a Wall
                             </div>
                         </div>
+                    </div>
+                    <div class="open-book">
+                        <img src={require("../Images/open-book.png")} width='80%' height="100%" />
                     </div>
                 </div>
             </nav>
