@@ -4,7 +4,7 @@ import MyCalendar from './components/Calendar';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
-import Home from './components/Home';
+import Home from './components/home';
 import SignIn from './components/SignIn';
 
 
@@ -16,7 +16,7 @@ function App() {
         <Navbar />
 
         <Switch>
-          <Route path = "/" component = {Home} />
+          <Route exact path = "/" component = {Home} />
           <Route path = "/signin" component = {SignIn} />
           {/* <Route path = "/members" component = {Members} />
           <Route path = "/wall" component = {Wall} /> */}
