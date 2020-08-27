@@ -1,5 +1,5 @@
 const express = require ("express");
-const mongoose = require("mongoose"); // npm install mongoose
+
 const bodyParser = require("body-parser");  // npm install body-parser
 
 let app = express();
