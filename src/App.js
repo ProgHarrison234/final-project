@@ -1,10 +1,11 @@
 import React from 'react';
 import 'react-bulma-components/dist/react-bulma-components.min.css';
-import Navbar from './components/Navbar';
+import MyCalendar from './components/Calendar';
+
 function App() {
   return (
     <div className="App">
-      <Navbar />
+      <MyCalendar />
     </div>
   );
 }
