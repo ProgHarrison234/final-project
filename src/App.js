@@ -1,5 +1,6 @@
 import React from 'react';
 import 'react-bulma-components/dist/react-bulma-components.min.css';
+import MyCalendar from './components/Calendar';     
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
@@ -21,7 +22,7 @@ function App() {
           <Route path = "/wall" component = {Wall} /> */}
         </Switch>
       </Router>
-
+ <MyCalendar />
       <Footer />
     </div>
   );
