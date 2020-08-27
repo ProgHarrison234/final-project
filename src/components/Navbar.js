@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Router, BrowserRouter } from 'react-router-dom';
 
 const Navbar = () => {
 
@@ -13,12 +13,12 @@ const Navbar = () => {
                     <div id="navbar-main">
                         <div id="logo-name">The Study Wall</div>
                         <div className = "columns">
-                            <div className="column pages">
+                            <Link to = "/signin" className="column pages">
                                   Sign In
-                            </div>
-                            <div className="column pages">
+                            </Link>
+                            <Link to = "/wall" className="column pages">
                                     Find a Wall
-                            </div>
+                            </Link>
                         </div>
                     </div>
                     <div class="open-book">

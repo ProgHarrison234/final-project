@@ -5,3 +5,5 @@
 #logo-name {font-size: 5rem;}
 
 .pages {display: inline; margin-left: 10%; color: #ffffff !important; font-family: 'Indie Flower', cursive; font-size: 1.5rem;}
+
+#footer {position: sticky; bottom: 0; background-color: tomato; width: 100%;}
