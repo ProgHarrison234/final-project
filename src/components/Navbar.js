@@ -6,12 +6,12 @@ const Navbar = () => {
     return (
         <div>
             <nav className="navbar is-info" role="navigation" aria-label="main navigation">
-                <div className="container nav-comp">
+                <div className="container">
                     <div className="open-book">
                         <img src={require("../Images/open-book.png")} width='80%' height="100%" />
                     </div>
                     <div id="navbar-main">
-                        <Link to = "/"><div id="logo-name">The Study Wall</div></Link>
+                        <div id="logo-name">The Study Wall</div>
                         <div className = "columns">
                             <Link to = "/signin" className="column pages">
                                   Sign In
