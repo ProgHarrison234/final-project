@@ -1,17 +1,11 @@
-import React from "react";
-import ReactDOM from "react-dom";
+import React from 'react';
+import { Link } from 'react-router-dom';
 
-const App = () => {
+const Home = () => {
+
     return (
-        <label> Select Stubdy Course:
-        <select>
-            <option value="html">HTML</option>
-            <option value="css">CSS</option>
-            <option value="javaScrip">Java Script</option>
-            <option value="webAPIs">Web APIs</option>
-        </select>
-        </label>
+      <div>Fun</div>
     );
 };
 
-ReactDOM.render( <App />, document.querySelector("#root"));
+export default Home;
