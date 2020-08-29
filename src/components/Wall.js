@@ -1,7 +1,6 @@
 import React from 'react';
 import Modal from 'react-modal';
 
-
 Const CreateWall = () => {
     Const [modalIsOpen, setModalIsOpen] = useState(false)
     return (
