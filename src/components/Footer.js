@@ -5,7 +5,10 @@ const Footer = () => {
 
     return (
         <div id = "footer">
-            Test
+            <div className = "container">
+                <br/>
+                The Study Wall, an app made by Herney, Josephine, and Nick.
+            </div>
         </div>);
 };
 
