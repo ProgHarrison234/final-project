@@ -1,40 +1,32 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import Modal from "react";
+import React from 'react';
+import Modal from 'react-modal';
 
-const Wall = (props) => {
+Const CreateWall = () => {
+    Const [modalIsOpen, setModalIsOpen] = useState(false)
     return (
-        <div className="container">
-
-            Find a Study Wall
-            {/* <div ClassName="create-wall">
-                <button ClassName="btn btn-primary"> Create Wall</button>
-                <Modal
-                    {...props}
-                    size="lg"
-                    aria-labelledby="contained-modal-title-vcenter"
-                    centered
-                >
-                    <Modal.Header closeButton>
-                        <Modal.Title id="contained-modal-title-vcenter">
-                            Modal heading
-                        </Modal.Title>
-                    </Modal.Header>
-                    <Modal.Body>
-                        <h4>Centered Modal</h4>
-                        <p>
-                            Cras mattis consectetur purus sit amet fermentum. Cras justo odio,
-                            dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac
-                            consectetur ac, vestibulum at eros.
-            </p>
-                    </Modal.Body>
-                    <Modal.Footer>
-                        <button onClick={props.onHide}>Close</button>
-                    </Modal.Footer>
-                </Modal>
-            </div> */}
+        <div className='CreateWall'>
+            <button OnClick={() => setModalIsOpen(true)}> Create Wall</button>
+            <Modal isOpen={modalIsOpen} onRequestClose={() => setModalIsOpen(false)}>
+            <form>
+                <div ClassName="form-control">
+                    <label htmlFor="title">Title</label>
+                    <input type="text" id="title"></input>
+                </div>
+                <div ClassName="form-control">
+                    <label htmlFor="description">Description</label>
+                    <textarea id="description" rows="5"></input>
+                </div>
+            </form>
+            
+            <h2>Study Course Title: </h2>
+            <h3> Description:</h3>
+            <div>
+                <button onClick={() => SetModalIsOpen(false)}>Close/Submit</button>
+            </div>
+            </Modal>
         </div>
-    );
-};
+    )
+}
 
-export default Wall;
+
+export default CreateWall;
