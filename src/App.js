@@ -1,7 +1,7 @@
 import React from 'react';
 import 'react-bulma-components/dist/react-bulma-components.min.css';
 // import MyCalendar from './components/Calendar';     
-import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Home from './components/home';
