@@ -2,7 +2,7 @@ import React from 'react';
 
 const SearchTopic = () => {
     return (
-        <label> Search Study Topic:
+        <label className = "dropdown"> Search Study Topic:   
         <select>
             <option value="html">Week 1 : HTML</option>
             <option value="css">Week 2 : CSS</option>
