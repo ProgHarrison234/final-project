@@ -1,4 +1,5 @@
 import React from "react";
+import ReactDOM from "react-dom";
 import { Link } from 'react-router-dom';
 
 const Home = () => {
@@ -22,8 +23,8 @@ const Home = () => {
             <br/><br/>
             <img src = {require("../Images/Desk Live Sharing.png")} />
         </div>
+            
     );
 };
 
 export default Home;
-
