@@ -4,7 +4,7 @@ import MyCalender from "./Calendar"
 
 const Members = () => {
     return (
-       <div className = "container">
+       <div className = "container calendar">
            <MyCalender />
        </div>
     );

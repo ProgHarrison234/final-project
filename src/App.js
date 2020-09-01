@@ -6,8 +6,9 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Home from './components/home';
 import SignIn from './components/SignIn';
-import Wall from './components/Wall';
+import CreateWall from './components/CreateWall';
 import Members from './components/Members';
+//import SearchTopic from './components/SearchTopic';
 
 function App() {
   return (
@@ -19,7 +20,8 @@ function App() {
           <Route exact path="/" component={Home} />
           <Route path="/signin" component={SignIn} />
           <Route path = "/members" component = {Members} />
-          <Route path="/wall" component={Wall} />
+          <Route path="/wall" component={CreateWall} />
+          
         </Switch>
       </Router>
           {/* <MyCalendar /> */}
