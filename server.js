@@ -1,29 +1,23 @@
-const express = require ("express");
+var express = require("express");
+const routes = require("./routes");
 
-const bodyParser = require("body-parser");  // npm install body-parser
+// Sets up the Express App
+var app = express();
+var PORT = process.env.PORT || 8080;
 
-let app = express();
+// Requiring our models for syncing
+var db = require("./models");
 
-mongoose.connect("mongodb://localhost/ss-auth");
+// Sets up the Express app to handle data parsing
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+app.use(express.static("client/build"));
 
-//Herney needs more time on "pug"
-app.set("view engine", "pug");
+// Add routes, both API and view
+app.use(routes);
 
-app.set("/", (req,res) => {
-    res.render("index);")
+db.sequelize.sync({ force: true }).then(function () {
+  app.listen(PORT, function () {
+    console.log("App listening on PORT " + PORT);
+  });
 });
-
-app.get("/login", (req, res) => {
-    res.render("login)");
-});
-
-//Using Body Parser to store user registration 
-app.use(bodyParser.urlencoded({
-    extended: false
-}));
-app.post("/resister", (req,res) => {
-    res.json(res.body);
-});
-
-
-app.listen(3000);
