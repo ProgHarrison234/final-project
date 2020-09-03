@@ -1,8 +1,8 @@
 import React from 'react';
-
+import API from '../utils/API'
 const PostWall = () => {
     return (
-        <div clasName = "post-wall">
+        <div className = "post-wall">
             Study Wall Posts
         </div>
     )
