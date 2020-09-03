@@ -1,6 +1,7 @@
 var express = require("express");
 const routes = require("./routes");
 
+
 // Sets up the Express App
 var app = express();
 let path = require("path");
@@ -14,6 +15,8 @@ var db = require("./models");
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static("client/build"));
+
+
 
 // Add routes, both API and view
 app.use(routes);
