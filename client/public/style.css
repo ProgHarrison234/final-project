@@ -14,7 +14,7 @@
 
 .cw-title {text-align: center;}
 
-.post-wall {height: 100px; color: darkgrey;}
+.post-wall {height: 100px; background-color: lightgray;}
 
 #members-page, #signin-btn {margin-left: 45%; color: #ffffff;}
 
