@@ -1,4 +1,3 @@
-
 var db = require("../models");
 
 module.exports = function(app) {
@@ -32,6 +31,7 @@ module.exports = function(app) {
     console.log(req.body);
     db.Post.create({
       title: req.body.title,
+      zoomLink: req.body.zoomLink,
       body: req.body.body,
       category: req.body.category
     })
