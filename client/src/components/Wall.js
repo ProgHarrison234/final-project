@@ -1,8 +1,7 @@
-import React, { useEffect, useState} from 'react';
+import React from 'react';
 import CreateWall from "./CreateWall";
 import PostWall from "./PostWall";
 import SearchTopic from "./SearchTopic";
-import API from '../utils/API';
 
 const Wall = () => {
     return (
@@ -13,7 +12,7 @@ const Wall = () => {
                     <SearchTopic />
                 </div>
                 <div className="column">
-                    <CreateWall handleFormSubmit={handleFormSubmit}/>
+                    <CreateWall />
                 </div>
             </div>
             <div className = "columns">

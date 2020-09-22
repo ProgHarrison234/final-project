@@ -1,5 +1,4 @@
 import React from "react";
-import ReactDOM from "react-dom";
 import { Link } from 'react-router-dom';
 
 const Home = () => {
@@ -16,12 +15,12 @@ const Home = () => {
             <input className = "input" type = "password" placeholder = "Password"></input>
             <br/><br/>
             <Link to = "/members">
-                <button className = "button is-info" id = "members-page">
-                    Members Page
+                <button className = "button is-info" id = "sign-up-btn">
+                    Sign Up
                 </button>
             </Link>
             <br/><br/>
-            <img src = {require("../Images/Desk Live Sharing.png")} />
+            <img src = {require("../Images/Desk Live Sharing.png")} alt="comic of people reading" />
         </div>
             
     );
