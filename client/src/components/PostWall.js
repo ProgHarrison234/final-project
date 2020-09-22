@@ -1,11 +1,12 @@
-import React from 'react';
-import API from '../utils/API'
-const PostWall = () => {
+import React, { useEffect, useState } from 'react';
+
+export default () => {
+    
     return (
-        <div className = "post-wall">
+        <div className="post-wall">
             Study Wall Posts
+            
         </div>
     )
 }
 
-export default PostWall;
