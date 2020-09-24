@@ -1,12 +1,12 @@
-import React, { useState, useContext } from 'react';
+import React, { useState } from 'react';
 import { Redirect } from 'react-router-dom';
-import { AuthContext } from "../contexts/AuthContext";
+//import { AuthContext } from "../contexts/AuthContext";
 import API from '../utils/API2';
 
 
 
 export const SignIn = () => {
-  const { toggleAuth } = useContext(AuthContext);
+  //const { toggleAuth } = useContext(AuthContext);
   const [userObject, setUserObject] = useState({
     email: "",
     password: ""
@@ -17,15 +17,14 @@ export const SignIn = () => {
   };
   function handleFormSubmit(event) {
     event.preventDefault();
-    if (userObject.username && userObject.email) {
+    if (userObject.password && userObject.email) {
       API.login({
         email: userObject.email,
         password: userObject.password
       })
         .then(result => {
+          console.log(result)
           if (result.status === 200) {
-            toggleAuth()
-            console.log("all good")
             return <Redirect to="/members" />
           }
         })
