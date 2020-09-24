@@ -21,7 +21,7 @@ const Navbar = () => {
                             </Link>
                         </div>
                     </div>
-                    <div class="open-book">
+                    <div className="open-book">
                         <img src={require("../Images/open-book.png")} width='80%' height="100%" alt="website-logo"/>
                     </div>
                 </div>

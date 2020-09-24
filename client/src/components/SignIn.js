@@ -1,86 +1,65 @@
-import React, {useState} from 'react';
-import { Link, Redirect } from 'react-router-dom';
-import axios from 'axios';
-import { useAuth } from "../contexts/AuthContext";
+import React, { useState, useContext } from 'react';
+import { Redirect } from 'react-router-dom';
+import { AuthContext } from "../contexts/AuthContext";
+import API from '../utils/API2';
 
 
 
-export const SignIn = (props) => {
-
-    return ( 
-    <div>
-        <div className = "container">
-            <h2 className = "signing-in">Input your info to Sign In</h2>
-            <br/><br/>
-            <input className = "input" type = "email" placeholder = "Email"></input>
-            <br/><br/>
-            <input className = "input" type = "password" placeholder = "Password"></input>
-            <br/><br/>
-            <Link to = "/members">
-                <button className = "button is-info" id = "signin-btn">
-                    Sign In
-                </button>
-            </Link>
-            <br/>  
-        </div>
-    </div>
-    );
-};
-
-export const Login = () => {
-    const [isLoggedIn, setLoggedIn] = useState(false);
-    const [isError, setIsError] = useState(false);
-    const [userName, setUserName] = useState("");
-    const [password, setPassword] = useState("");
-    const { setAuthTokens } = useAuth();
-  
-    function postLogin() {
-      axios.post("/Signin", {
-        userName,
-        password
-      }).then(result => {
-        if (result.status === 200) {
-          setAuthTokens(result.data);
-          setLoggedIn(true);
-        } else {
-          setIsError(true);
-        }
-      }).catch(e => {
-        setIsError(true);
-      });
-    }
-  
-    if (isLoggedIn) {
-      return <Redirect to="/members" />;
-    }
-  
-    // return (
-    //   <Card>
-        
-    //     <Form>
-    //       <Input
-    //         type="username"
-    //         value={userName}
-    //         onChange={e => {
-    //           setUserName(e.target.value);
-    //         }}
-    //         placeholder="email"
-    //       />
-    //       <Input
-    //         type="password"
-    //         value={password}
-    //         onChange={e => {
-    //           setPassword(e.target.value);
-    //         }}
-    //         placeholder="password"
-    //       />
-    //       <Button onClick={postLogin}>Sign In</Button>
-    //     </Form>
-        
-    //       { isError &&<Error>The username or password provided were incorrect!</Error> }
-    //   </Card>
-    //);
+export const SignIn = () => {
+  const { toggleAuth } = useContext(AuthContext);
+  const [userObject, setUserObject] = useState({
+    email: "",
+    password: ""
+  })
+  function handleInputChange(event) {
+    const { name, value } = event.target;
+    setUserObject({ ...userObject, [name]: value })
+  };
+  function handleFormSubmit(event) {
+    event.preventDefault();
+    if (userObject.username && userObject.email) {
+      API.login({
+        email: userObject.email,
+        password: userObject.password
+      })
+        .then(result => {
+          if (result.status === 200) {
+            toggleAuth()
+            console.log("all good")
+            return <Redirect to="/members" />
+          }
+        })
+        .catch(err => console.log(err))
+    };
   }
-  
+    return (
+      <div>
+        <div className="container">
+          <h2 className="signing-in">Input your info to Sign In</h2>
+          <br /><br />
+          <input onChange={handleInputChange}
+            name="email"
+            placeholder="Email (required)"
+            value={userObject.email}
+            className="input"
+            type="email"></input>
+          <br /><br />
+          <input onChange={handleInputChange}
+            name="password"
+            placeholder="Password (required)"
+            value={userObject.password}
+            className="input"
+            type="password"></input>
+          <br /><br />
+
+          <button className="button is-info" id="sign-up-btn" onClick={handleFormSubmit}>Sign in</button>
+          <br />
+        </div>
+      </div>
+    );
+  };
+
+
+
 
 
