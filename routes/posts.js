@@ -1,7 +1,6 @@
 var db = require("../models");
-
 module.exports = function(app) {
-  app.get("/api/posts/", function(req, res) {
+app.get("/api/posts", function(req, res) {
     db.Post.findAll({})
       .then(function(dbPost) {
         res.json(dbPost);
@@ -39,7 +38,7 @@ module.exports = function(app) {
         res.json(dbPost);
       });
   });
-  app.delete("/api/posts/:id", function(req, res) {
+  app.delete("api/posts/:id", function(req, res) {
     db.Post.destroy({
       where: {
         id: req.params.id
@@ -49,7 +48,7 @@ module.exports = function(app) {
         res.json(dbPost);
       });
   });
-  app.put("/api/posts", function(req, res) {
+  app.put("/api/posts/", function(req, res) {
     db.Post.update(req.body,
       {
         where: {

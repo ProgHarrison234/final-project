@@ -1,11 +1,10 @@
 import React from "react";
-import ReactDOM from "react-dom";
-import MyCalender from "./Calendar"
+import MyCalendar from "./Calendar"
 
 const Members = () => {
     return (
        <div className = "container calendar">
-           <MyCalender />
+           <MyCalendar />
        </div>
     );
 };
